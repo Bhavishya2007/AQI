@@ -27,7 +27,7 @@ st.markdown("""
 
 /* Overlay for better readability */
 .block-container {
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.3);
     padding: 40px;
     border-radius: 20px;
 }
@@ -85,6 +85,11 @@ div.stButton > button {
     height: 50px;
     width: 200px;
     font-size: 16px;
+}
+
+/* Sidebar styling - light black background */
+section[data-testid="stSidebar"] {
+    background: rgba(0, 0, 0, 0.3);
 }
 </style>
 """, unsafe_allow_html=True)
@@ -154,11 +159,11 @@ if option == "City Analysis":
             pm25 = components.get("pm2_5", 0)
 
             # Show in table
-            pollutant_df = pd.DataFrame({
-                "Pollutant": ["PM2.5", "PM10", "NO₂", "SO₂"],
-                "Value (μg/m³)": [pm25, pm10, no2, so2]
-            })
-            st.table(pollutant_df)
+            # pollutant_df = pd.DataFrame({
+            #     "Pollutant": ["PM2.5", "PM10", "NO₂", "SO₂"],
+            #     "Value (μg/m³)": [pm25, pm10, no2, so2]
+            # })
+            # st.table(pollutant_df)
 
             input_data = pd.DataFrame([{
                 "SO2": so2,
